@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Pomodoro Timer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-mode">
+    <button id="darkModeToggle">Turn on light mode</button>
+    <h1>Advanced Pomodoro Timer</h1>
+    
+    <div id="timer">
+        <h2 id="timerType">Work</h2>
+        <div id="timeDisplay" class="timer-display">25:00</div>
+        <button id="toggleTimer">Start</button>
+        <button id="resetTimer">Reset</button>
+        <p>Pomodoros completed: <span id="pomodoroCount">0</span></p>
+        <div id="customIntervals">
+            <input type="number" id="workInterval" value="25" min="1"> -
+            <input type="number" id="shortBreakInterval" value="5" min="1"> -
+            <input type="number" id="workInterval2" value="25" min="1"> -
+            <input type="number" id="longBreakInterval" value="15" min="1">
+        </div>
+        <div id="breakSuggestion"></div>
+    </div>
+
+    <div id="taskList">
+        <h2>Tasks</h2>
+        <input type="text" id="newTask" placeholder="Add a new task">
+        <input type="text" id="newTaskTag" placeholder="Add tags (comma-separated)">
+        <button id="addTask">Add Task</button>
+        <ul id="tasks"></ul>
+    </div>
+
+    <div id="settings">
+        <h2>Settings</h2>
+        <div>
+            <label>
+                Work Duration (minutes):
+                <input type="number" id="workDuration" value="25" min="1">
+            </label>
+        </div>
+        <div>
+            <label>
+                Short Break Duration (minutes):
+                <input type="number" id="shortBreakDuration" value="5" min="1">
+            </label>
+        </div>
+        <div>
+            <label>
+                Long Break Duration (minutes):
+                <input type="number" id="longBreakDuration" value="15" min="1">
+            </label>
+        </div>
+    </div>
+
+    <div id="stats">
+        <h2>Statistics</h2>
+        <p>Total Pomodoros Completed: <span id="totalPomodoros">0</span></p>
+        <p>Total Work Time: <span id="totalWorkTime">0 hours 0 minutes</span></p>
+        <p>Total Break Time: <span id="totalBreakTime">0 hours 0 minutes</span></p>
+        <p>Productivity Score: <span id="productivityScore">0</span></p>
+    </div>
+
+    <div id="kanbanBoard" class="kanban-board">
+        <div class="kanban-column">
+            <h3>To Do</h3>
+            <ul id="todoTasks"></ul>
+        </div>
+        <div class="kanban-column">
+            <h3>In Progress</h3>
+            <ul id="inProgressTasks"></ul>
+        </div>
+        <div class="kanban-column">
+            <h3>Done</h3>
+            <ul id="doneTasks"></ul>
+        </div>
+    </div>
+
+    <div id="focusMusic">
+        <h2>Focus Music</h2>
+        <audio id="musicPlayer" controls>
+            <source src="https://example.com/focus-music.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <div id="productivityHeatMap">
+        <h2>Productivity Heat Map</h2>
+        <div class="heat-map" id="heatMap"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
